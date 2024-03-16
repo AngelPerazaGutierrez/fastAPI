@@ -15,7 +15,7 @@ def hello_world():
 #debeos dejar dos espacios entre def para que python no bote error
 
 
-@my_backend.post("/")
+@my_backend.post("/") #el el body de post podemos pasar estos paramentros como nombre, nombre secreto y edad para que los guarde en db
 async def add_hero(request: Request): #funcion asyncrona que añade al hero desde el body del POST
     body = await request.json() #uso Json ya que desde el post.body estoy recibiendo los datos con Await espero hasta que responda el post
     hero = Hero(name=body['name'], secret_name=body['secret_name'], age=body['age']) #llamo a cada item del diccionario en body
